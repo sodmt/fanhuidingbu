@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="base(1).css">
+</head>
+<style>
+	.box{
+		width: 500px;
+		height: 2000px;
+		border: 2px solid red;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.tou{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: rgba(220,20,60, .7);
+		position: fixed;
+		right: 10px;
+		bottom: 30px;
+		text-align: center;
+		display: block;
+		line-height: 95px;
+		font-size: 35px;
+		display: none;
+	}
+
+</style>
+<body>
+	<div class="box"></div>
+	<!-- <div class="top"><span>Top</span></div> -->
+	<a href="#top" target="_self" class="tou">Top</a>
+</body>
+</html>
+<script>
+	let tou = document.querySelector(".tou");
+		tou.style.display = "none";
+		window.onscroll = function(){
+			var scrollTop = document.documentElement.
+				scrollTop || document.body.scrollTop || window.scrollY || window.pageYOffset;
+			if(scrollTop > 300){	
+				tou.style.display="block"; 
+			}else{
+				tou.style.display="none";
+			}
+		}
+		tou.onclick=function(){
+			window.scrollTo(0, 0);
+		}
+</script>
